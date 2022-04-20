@@ -1,0 +1,73 @@
+.slider__container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+}
+.slider__container__text {
+  width: 220px;
+  height: 20px;
+  border-radius: 3px;
+  border: solid 0.3px gray;
+  display: flex;
+  justify-content: center;
+  padding: 8px;
+  margin-bottom: 20px;
+  text-align: right;
+}
+
+.slider {
+  -webkit-appearance: none;
+  overflow: hidden;
+  width: 230px;
+  height: 25px;
+  background: transparent;
+  cursor: pointer;
+  background: #e5e4e3;
+  border-radius: 25px;
+  margin-bottom: 5px;
+  opacity: 1;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #fff;
+  box-shadow: -50vw 0 0 50vw skyblue;
+  border: 0.1px solid skyblue;
+  border-radius: 25px;
+  color: skyblue;
+  cursor: pointer;
+}
+
+.slider__button__container {
+  display: flex;
+  justify-content: space-between;
+  width: 230px;
+}
+
+.slider__button__container div {
+  font-size: 10px;
+  width: 30px;
+  padding: 3px 3px;
+  border-radius: 25px;
+  margin-bottom: 10px;
+  border: solid 0.1px e5e4e3;
+  cursor: pointer;
+  background: #e5e4e3;
+  text-align: center;
+  opacity: 0.7;
+}
+.slider__button__container div:hover {
+    background-color: skyblue;
+  opacity: 1;
+}
+.slider__button__container div :active{
+    background-color: skyblue;
+}
