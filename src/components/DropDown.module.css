@@ -1,0 +1,36 @@
+.dropdown__container{
+   width: 220px;
+   height: 20px;
+   border: solid 1px gainsboro;
+   padding: 8px;
+   margin: 0px auto;
+   border-radius: 3px;
+   justify-content: center;
+   margin-bottom: 3px;
+}
+.dropdown__container input{
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+.dropdown__container i{
+    margin-left: 15px;
+    cursor: pointer;
+}
+.drop_item_container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 9px;
+    text-align: left;
+    font-size: 20px;
+    border: solid 1px gainsboro;
+    width: 220px;
+    padding: 10px;
+    margin-right: 10px;
+    z-index: 100;
+    position: absolute;
+    background: #fff;
+}
+.drop_item_container div:hover{
+    cursor: pointer;
+}

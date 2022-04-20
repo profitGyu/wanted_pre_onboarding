@@ -1,7 +1,16 @@
 import { useEffect, useState } from "react";
+import styles from "./DropDown.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faCaretUp,
+  faCaretDown,
+  faMagnifyingGlass,
+} from "@fortawesome/free-solid-svg-icons";
 
 export const DropDown = () => {
+  const [inputValue, setInputValue] = useState("선택하세요");
   const [coins, setCoin] = useState([]);
+  const [iconState, SetIconState] = useState(true);
 
   const getCoinTracker = async () => {
     const json = await (
@@ -13,17 +22,78 @@ export const DropDown = () => {
     getCoinTracker();
   }, []);
 
-  return(
+  const DropDown = (e) => {
+    let next = e.currentTarget.nextSibling;
+    let drop_list = document.querySelector("#drop_item_container");
+    drop_list.style.left = e.currentTarget.offsetLeft + "px";
+    drop_list.style.width = e.currentTarget.offsetWidth - 23 + "px";
+    if (next.style.display === "none") {
+      next.style.display = "block";
+      SetIconState(false);
+    } else {
+      next.style.display = "none";
+      SetIconState(true);
+    }
+  };
+
+  const ClickDopDownValue = (e) => {
+    let value = e.target.outerText;
+    console.log(e.target.outerText);
+    setInputValue(value);
+  };
+
+  const FilterDropDown = (e) => {
+    console.log(e.target.value);
+  };
+
+  return (
     <div>
-        <h2>DropDown</h2>
-        <select >
-        <option>Select Coin!</option>
-        {coins.slice(0,50).map((coin, index) => (
-          <option key={index} value={coin.quotes.USD.price}> 
-            {coin.name}({coin.symbol}) {coin.quotes.USD.price} USD
-          </option>
-        ))}
-      </select>
+      <h2>DropDown</h2>
+      <div
+        className={styles.dropdown__container}
+        onClick={(e) => {
+          DropDown(e);
+        }}
+      >
+        <input type="text" value={inputValue} readOnly />
+        <i>
+          <FontAwesomeIcon
+            icon={iconState ? faCaretDown : faCaretUp}
+            color={"black"}
+          />
+        </i>
+      </div>
+      <div
+        className={styles.dropdown__container}
+        style={{
+          display: "none",
+        }}
+      >
+        <input
+          type="text"
+          placeholder="Search..coin"
+          onKeyUp={(e) => {
+            FilterDropDown(e);
+          }}
+        />
+        <i>
+          <FontAwesomeIcon icon={faMagnifyingGlass} color={"black"} />
+        </i>
+        <div id="drop_item_container" className={styles.drop_item_container}>
+          {coins.slice(0, 20).map((coin, index) => {
+            return (
+              <div
+                key={index}
+                onClick={(e) => {
+                  ClickDopDownValue(e);
+                }}
+              >
+                {coin.name}
+              </div>
+            );
+          })}
+        </div>
+      </div>
     </div>
   );
 };
