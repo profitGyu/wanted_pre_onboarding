@@ -10,10 +10,10 @@ function App() {
   return (
     <div className="App">
       <Tab />
-      <Toggle />
       <DropDown />
       <Input />
       <Slider />
+      <Toggle />
     </div>
   );
 }

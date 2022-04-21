@@ -7,6 +7,7 @@
    border-radius: 3px;
    justify-content: center;
    margin-bottom: 3px;
+   opacity: 1;
 }
 .dropdown__container input{
     outline: none;
@@ -25,12 +26,17 @@
     font-size: 20px;
     border: solid 1px gainsboro;
     width: 220px;
-    padding: 10px;
+    font-size: 15px;
     margin-right: 10px;
     z-index: 100;
     position: absolute;
     background: #fff;
 }
+.drop_item_container div{
+    padding: 10px;
+}
 .drop_item_container div:hover{
     cursor: pointer;
+    background: skyblue;
+    
 }

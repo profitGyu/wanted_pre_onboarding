@@ -27,7 +27,7 @@
 }
 .slider:before {
   position: absolute;
-  content: "2";
+  content: "몰루?";
   height: 26px;
   width: 110px;
   left: 4px;
@@ -37,7 +37,10 @@
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
-
+.slider div{
+  margin-top: 5px;
+  color: gainsboro;
+}
 
 input:checked + .slider:before {
   -webkit-transform: translateX(110px);
