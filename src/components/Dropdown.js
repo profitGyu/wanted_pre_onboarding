@@ -96,7 +96,7 @@ export const DropDown = () => {
           <FontAwesomeIcon icon={faMagnifyingGlass} color={"black"} />
         </i>
         <div id="drop_item_container" className={styles.drop_item_container}>
-          {coins.slice(0, 20).map((coin, index) => {
+          {coins.slice(0, 10).map((coin, index) => {
             return (
               <div
                 key={index}
