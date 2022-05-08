@@ -1,5 +1,8 @@
 # wanted_pre_onbarding
 
+온보딩 코스 첫주차 과제 페이지 입니다!
+[온보딩 코스 첫주차 과제 페이지](https://github.com/silent10z/refactoring_wanted_pre_onboarding)
+
 https://silent10z.github.io/wanted_pre_onboarding
 로 접속하시면 구연된 것들을 확인 할 수 있습니다.
 
